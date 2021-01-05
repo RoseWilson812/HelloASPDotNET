@@ -23,17 +23,6 @@ namespace HelloASPDotNET
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-        // To fix 500.0 error- didn't work:
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-              WebHost.CreateDefaultBuilder(args)
-             .ConfigureLogging(logging =>
-             {   
-                 logging.ClearProviders();
-                 logging.AddEventLog();
-             })
-            .UseIIS()
-            .CaptureStartupErrors(true)
-            .UseStartup<Startup>();
-        //
+        
     }
 }
